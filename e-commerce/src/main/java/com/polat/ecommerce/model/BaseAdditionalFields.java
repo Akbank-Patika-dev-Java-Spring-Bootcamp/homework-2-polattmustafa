@@ -12,11 +12,11 @@ import java.time.LocalDateTime;
 @Embeddable
 public class BaseAdditionalFields {
 
-    @Column(name = "ID_CUSTOMER_CREATED_BY")
-    private Long createdBy;
+    @Column(name = "CUSTOMER_CREATED_BY")
+    private String createdBy;
 
-    @Column(name = "ID_CUSTOMER_UPDATE_BY")
-    private Long updatedBy;
+    @Column(name = "CUSTOMER_UPDATE_BY")
+    private String updatedBy;
 
     @Column(name = "CREATE_DATE")
     private LocalDateTime createDate;
