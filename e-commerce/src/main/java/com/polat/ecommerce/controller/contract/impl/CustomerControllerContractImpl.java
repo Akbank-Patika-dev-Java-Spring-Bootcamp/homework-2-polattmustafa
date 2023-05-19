@@ -1,9 +1,9 @@
 package com.polat.ecommerce.controller.contract.impl;
 
 import com.polat.ecommerce.controller.contract.CustomerControllerContract;
-import com.polat.ecommerce.dto.CustomerDTO;
-import com.polat.ecommerce.dto.CustomerDeleteRequest;
-import com.polat.ecommerce.dto.CustomerSaveRequest;
+import com.polat.ecommerce.dto.customer.CustomerDTO;
+import com.polat.ecommerce.dto.customer.CustomerDeleteRequest;
+import com.polat.ecommerce.dto.customer.CustomerSaveRequest;
 import com.polat.ecommerce.mapper.CustomerMapper;
 import com.polat.ecommerce.model.Customer;
 import com.polat.ecommerce.service.CustomerEntityService;

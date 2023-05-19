@@ -1,7 +1,7 @@
 package com.polat.ecommerce.mapper;
 
-import com.polat.ecommerce.dto.CustomerDTO;
-import com.polat.ecommerce.dto.CustomerSaveRequest;
+import com.polat.ecommerce.dto.customer.CustomerDTO;
+import com.polat.ecommerce.dto.customer.CustomerSaveRequest;
 import com.polat.ecommerce.model.Customer;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;

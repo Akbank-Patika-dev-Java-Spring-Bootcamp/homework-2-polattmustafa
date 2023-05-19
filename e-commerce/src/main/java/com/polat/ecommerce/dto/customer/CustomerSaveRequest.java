@@ -1,4 +1,4 @@
-package com.polat.ecommerce.dto;
+package com.polat.ecommerce.dto.customer;
 
 import com.polat.ecommerce.enums.EnumCustomerType;
 

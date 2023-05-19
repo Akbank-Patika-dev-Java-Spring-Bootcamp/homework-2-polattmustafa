@@ -1,8 +1,8 @@
 package com.polat.ecommerce.controller.contract;
 
-import com.polat.ecommerce.dto.CustomerDTO;
-import com.polat.ecommerce.dto.CustomerDeleteRequest;
-import com.polat.ecommerce.dto.CustomerSaveRequest;
+import com.polat.ecommerce.dto.customer.CustomerDTO;
+import com.polat.ecommerce.dto.customer.CustomerDeleteRequest;
+import com.polat.ecommerce.dto.customer.CustomerSaveRequest;
 
 import java.util.List;
 
