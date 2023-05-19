@@ -21,6 +21,9 @@ public class Product extends BaseModel{
     @Column(name = "NAME", length = 100, nullable = false)
     private String name;
 
+    @Column(name = "BRAND", length = 100)
+    private String brand;
+
     @Column(name = "PRICE")
     private double price;
 
