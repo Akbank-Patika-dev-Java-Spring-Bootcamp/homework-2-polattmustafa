@@ -54,11 +54,5 @@ public class Customer extends BaseModel{
                targetEntity = Comment.class)
     private List<Comment> comment = new ArrayList<>();
 
-    @OneToMany(fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL,
-            mappedBy = "customer",
-            targetEntity = Product.class
-    )
-    private List<Product> products = new ArrayList<>();
 
 }

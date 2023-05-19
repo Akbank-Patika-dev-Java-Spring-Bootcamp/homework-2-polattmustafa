@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "PRODUCT")
 @Getter
@@ -24,9 +27,10 @@ public class Product extends BaseModel{
     @Column(name = "DESCRIPTION")
     private String description;
 
-    @ManyToOne(cascade = CascadeType.ALL,
-               fetch = FetchType.LAZY,
-               optional = false )
-    private Customer customer;
+    @OneToMany(fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            mappedBy = "product",
+            targetEntity = Comment.class)
+    private List<Comment> comment = new ArrayList<>();
 
 }

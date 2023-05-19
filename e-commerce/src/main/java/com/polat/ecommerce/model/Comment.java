@@ -23,4 +23,9 @@ public class Comment extends BaseModel{
                optional = false )
     private Customer customer;
 
+    @ManyToOne(cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY,
+            optional = false )
+    private Product product;
+
 }
