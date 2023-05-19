@@ -2,6 +2,7 @@ package com.polat.ecommerce.controller.contract.impl;
 
 import com.polat.ecommerce.controller.contract.CustomerControllerContract;
 import com.polat.ecommerce.dto.CustomerDTO;
+import com.polat.ecommerce.dto.CustomerDeleteRequest;
 import com.polat.ecommerce.dto.CustomerSaveRequest;
 import com.polat.ecommerce.mapper.CustomerMapper;
 import com.polat.ecommerce.model.Customer;
@@ -33,10 +34,11 @@ public class CustomerControllerContractImpl implements CustomerControllerContrac
     }
 
     @Override
-    public Boolean delete(Long id, String username, String phone) {
+    public Boolean delete(Long id, CustomerDeleteRequest customerDeleteRequest) {
         Customer customer = customerEntityService.findById(id).orElseThrow();
-        if (customer.getUsername().equals(username) && customer.getPhone().equals(phone)) {
-            customerEntityService.delete(id);
+        if (customer.getUsername().equals(customerDeleteRequest.username())
+                && customer.getPhone().equals(customerDeleteRequest.phone())) {
+            customerEntityService.delete(customer);
             return true;
         } else {
             return false;
