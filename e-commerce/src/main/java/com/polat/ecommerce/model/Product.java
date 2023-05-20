@@ -34,6 +34,6 @@ public class Product extends BaseModel{
             cascade = CascadeType.ALL,
             mappedBy = "product",
             targetEntity = Comment.class)
-    private List<Comment> comment = new ArrayList<>();
+    private List<Comment> comments = new ArrayList<>();
 
 }

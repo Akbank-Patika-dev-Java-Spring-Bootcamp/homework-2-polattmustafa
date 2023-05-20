@@ -1,5 +1,6 @@
 package com.polat.ecommerce.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,13 +20,14 @@ public class Comment extends BaseModel{
     private String explanation;
 
     @ManyToOne(cascade = CascadeType.ALL,
-               fetch = FetchType.LAZY,
-               optional = false )
+               fetch = FetchType.LAZY)
+    @JoinColumn(name = "ID_CUSTOMER", nullable = false)
+    @JsonIgnoreProperties("comments")
     private Customer customer;
 
     @ManyToOne(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            optional = false )
+               fetch = FetchType.LAZY)
+    @JoinColumn(name = "ID_PRODUCT", nullable = false)
     private Product product;
 
 }

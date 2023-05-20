@@ -1,5 +1,6 @@
 package com.polat.ecommerce.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.polat.ecommerce.enums.EnumCustomerType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -48,11 +49,12 @@ public class Customer extends BaseModel{
     @Enumerated(EnumType.STRING)
     private EnumCustomerType type;
 
-    @OneToMany(fetch = FetchType.LAZY,
-               cascade = CascadeType.ALL,
+    @OneToMany(cascade = CascadeType.ALL,
+               fetch = FetchType.LAZY,
                mappedBy = "customer",
                targetEntity = Comment.class)
-    private List<Comment> comment = new ArrayList<>();
+    @JsonIgnore
+    private List<Comment> comments = new ArrayList<>();
 
 
 }
