@@ -55,7 +55,7 @@ public class CustomerController {
         if (isDeleted) {
             return ResponseEntity.ok(RestResponse.empty());
         } else {
-            return ResponseEntity.ok(RestResponse.message(String.format("%s username and %s phone information did not match",
+            return ResponseEntity.ok(RestResponse.errorMessage(String.format("%s username and %s phone information did not match",
                             customerDeleteRequest.username(), customerDeleteRequest.phone())));
         }
     }
