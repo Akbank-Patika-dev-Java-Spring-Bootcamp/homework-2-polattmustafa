@@ -22,7 +22,7 @@ public class CustomerControllerContractImpl implements CustomerControllerContrac
     public CustomerDTO save(CustomerSaveRequest request) {
         Customer customer = CustomerMapper.INSTANCE.convertToCustomer(request);
 
-        customer =customerEntityService.save(customer);
+        customer = customerEntityService.save(customer);
 
         return CustomerMapper.INSTANCE.convertToCustomerDTO(customer);
     }
