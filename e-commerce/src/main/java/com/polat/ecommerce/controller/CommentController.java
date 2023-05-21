@@ -34,7 +34,7 @@ public class CommentController {
     @GetMapping("/user/{ID_CUSTOMER}")
     public ResponseEntity<RestResponse<List<CommentDTO>>> findUserComments(@PathVariable("ID_CUSTOMER") Long customerId) {
         var commentDTOList = commentControllerContract.findUserComments(customerId);
-        if (commentDTOList == null || commentDTOList.isEmpty()) {
+        if (commentDTOList == null || commentDTOList.size() == 0) {
             return ResponseEntity.ok(RestResponse.errorMessage(String.format("Id:%s customer has not yet commented", customerId)));
         } else {
             return ResponseEntity.ok(RestResponse.of(commentDTOList));
@@ -44,7 +44,7 @@ public class CommentController {
     @GetMapping("/product/{ID_PRODUCT}")
     public ResponseEntity<RestResponse<List<CommentDTO>>> findProductComments(@PathVariable("ID_PRODUCT") Long productId) {
         var commentDTOList = commentControllerContract.findProductComments(productId);
-        if (commentDTOList == null || commentDTOList.isEmpty()) {
+        if (commentDTOList == null || commentDTOList.size() == 0) {
             return ResponseEntity.ok(RestResponse.errorMessage(String.format("Id:%s product has not given comment yet", productId)));
         } else {
             return ResponseEntity.ok(RestResponse.of(commentDTOList));
