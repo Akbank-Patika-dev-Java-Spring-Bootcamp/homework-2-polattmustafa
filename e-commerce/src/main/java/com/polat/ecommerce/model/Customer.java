@@ -51,9 +51,7 @@ public class Customer extends BaseModel{
 
     @OneToMany(cascade = CascadeType.ALL,
                fetch = FetchType.LAZY,
-               mappedBy = "customer",
-               targetEntity = Comment.class)
-    @JsonIgnore
+               mappedBy = "customer")
     private List<Comment> comments = new ArrayList<>();
 
 

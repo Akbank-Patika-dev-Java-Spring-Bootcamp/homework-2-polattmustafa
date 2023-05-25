@@ -31,9 +31,8 @@ public class Product extends BaseModel{
     private String description;
 
     @OneToMany(fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL,
-            mappedBy = "product",
-            targetEntity = Comment.class)
+               cascade = CascadeType.ALL,
+               mappedBy = "product")
     private List<Comment> comments = new ArrayList<>();
 
 }

@@ -19,14 +19,11 @@ public class Comment extends BaseModel{
     @Column(name = "EXPLANATION", length = 500)
     private String explanation;
 
-    @ManyToOne(cascade = CascadeType.ALL,
-               fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_CUSTOMER", nullable = false)
-    @JsonIgnoreProperties("comments")
     private Customer customer;
 
-    @ManyToOne(cascade = CascadeType.ALL,
-               fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_PRODUCT", nullable = false)
     private Product product;
 

@@ -5,7 +5,7 @@ import com.polat.ecommerce.dto.product.ProductDTO;
 
 public record CommentDTO(Long id,
                          String explanation,
-                         CustomerDTO customer,
-                         ProductDTO product) {
+                         Long customerId,
+                         Long productId) {
 
 }
