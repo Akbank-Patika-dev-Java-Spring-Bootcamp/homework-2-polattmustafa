@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface CommentControllerContract {
 
-    CommentDTO save(CommentSaveRequest commentSaveRequest, Long productId, Long customerId);
+    CommentDTO save(CommentSaveRequest commentSaveRequest);
 
     void delete(Long id);
 

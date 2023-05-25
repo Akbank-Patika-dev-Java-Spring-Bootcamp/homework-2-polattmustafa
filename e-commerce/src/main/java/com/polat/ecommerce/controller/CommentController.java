@@ -17,11 +17,9 @@ public class CommentController {
 
     private final CommentControllerContract commentControllerContract;
 
-    @PostMapping("/save/{ID_PRODUCT}/{ID_CUSTOMER}")
-    public ResponseEntity<RestResponse<CommentDTO>> save(@RequestBody CommentSaveRequest commentSaveRequest,
-                                                         @PathVariable("ID_PRODUCT") Long productId,
-                                                         @PathVariable("ID_CUSTOMER") Long customerId) {
-        var commentDTO = commentControllerContract.save(commentSaveRequest, productId, customerId);
+    @PostMapping("/save")
+    public ResponseEntity<RestResponse<CommentDTO>> save(@RequestBody CommentSaveRequest commentSaveRequest) {
+        var commentDTO = commentControllerContract.save(commentSaveRequest);
         return ResponseEntity.ok(RestResponse.of(commentDTO));
     }
 

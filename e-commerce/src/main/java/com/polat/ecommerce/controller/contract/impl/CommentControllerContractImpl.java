@@ -26,10 +26,10 @@ public class CommentControllerContractImpl implements CommentControllerContract 
     private final ProductEntityService productEntityService;
 
     @Override
-    public CommentDTO save(CommentSaveRequest commentSaveRequest, Long productId, Long customerId) {
+    public CommentDTO save(CommentSaveRequest commentSaveRequest) {
 
-        Customer customer = customerEntityService.findById(customerId).orElseThrow();
-        Product product = productEntityService.findById(productId).orElseThrow();
+        Customer customer = customerEntityService.findByIdWithControl(commentSaveRequest.customerId());
+        Product product = productEntityService.findByIdWithControl(commentSaveRequest.productId());
         Comment comment = CommentMapper.INSTANCE.convertToComment(commentSaveRequest);
 
         comment.setCustomer(customer);
